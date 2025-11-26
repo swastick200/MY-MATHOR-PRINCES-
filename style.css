@@ -1,0 +1,375 @@
+/* style.css (FULL - mobile responsive, neon glows, animations, carousel, cube, fade slideshow) */
+:root{
+--accent: #ff6fb5;
+--accent2: #9b6bff;
+--bg1: #071022;
+--bg2: #001022;
+--glass: rgba(255,255,255,0.04);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Nunito',sans-serif;background:radial-gradient(circle at 20% 10%, #0b2340 0%, #00111a 60%);color:#fff;-webkit-font-smoothing:antialiased}
+
+/* ===== BACKGROUND STARS & MOON ===== */
+#stars,#stars2,#stars3{position:absolute; width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+background:transparent url('[https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/stars.png](https://raw.githubusercontent.com/VincentGarreau/particles.js/master/demo/media/stars.png)') repeat;animation: moveStars 100s linear infinite;
+  z-index: -1;
+}
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 10000px;}
+}
+
+#stars{opacity:0.22;animation:moveStars 120s linear infinite}
+#stars2{opacity:0.14;transform:scale(1.6);animation:moveStars 200s linear infinite}
+#stars3{opacity:0.06;transform:scale(2);animation:moveStars 320s linear infinite}
+@keyframes moveStars{from{background-position:0 0}to{background-position:10000px 10000px}}
+
+.emoji-stars{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font: size 24px;z-index:2;pointer-events:none;opacity:0.95}
+
+.moon{position:fixed;right:18px;top:18px;width:96px;border-radius:50%;box-shadow:0 6px 40px rgba(155,107,255,0.06);z-index:3}
+/* 💫 Shooting Stars */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: white;
+  opacity: 0.7;
+  animation: shoot 3s linear infinite;
+}
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(500px) translateY(500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+/* 💕 Floating Hearts */
+.floating-heart {
+  position: absolute;
+  color: pink;
+  font-size: 24px;
+  animation: floatHeart 5s ease-in-out infinite;
+  z-index: 1;
+}
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-40px) scale(1);
+    opacity: 0;
+  }
+}
+/* 🌠 Falling Stars Animation */
+.emoji-stars {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  animation: fallStars 5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes fallStars {
+  0% {
+    top: -50px;
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+/* 🦋 Orbiting Butterflies around Her Name (Anwesha) */
+.orbit-butterfly {
+  position: absolute;
+  top: -10px;
+  left: 10%;
+  font-size: 24px;
+  animation: orbit-butterfly 8s linear infinite;
+  transform-origin: -60px right
+}
+
+.orbit-b1 {
+  animation-delay: 0s;
+}
+.orbit-b2 {
+  animation-delay: 4s;
+}
+
+@keyframes orbit-butterfly {
+  0%   { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+/* ===== HERO ===== */
+.hero{text-align:center;padding:72px 16px}
+.hero h1{font-family:'Great Vibes',cursive;font-size:3rem;margin:0;text-shadow:0 6px 30px rgba(155,107,255,0.08)}
+.hero .subtitle{margin-top:8px;opacity:0.9}
+.cta{margin-top:18px;padding:12px 22px;border-radius:28px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;cursor:pointer;box-shadow:0 12px 36px rgba(155,107,255,0.18)}
+
+/* heartbeat animation (gentle) */
+.heartbeat-btn{animation:heartbeat 2.4s infinite ease-in-out}
+@keyframes heartbeat{0%,100%{transform:scale(1)}30%{transform:scale(1.06)}60%{transform:scale(0.98)}}
+
+/* ===== MAIN CONTENT ===== */
+.hidden{display:none}
+.sky-message{text-align:center;padding:34px 16px}
+.center-name{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--accent);display:inline-block;padding:6px 14px;border-radius:18px}
+.orbit-wrapper{position:relative;display:inline-block}
+.orbit-butterfly{position:absolute;font-size:18px;top:6px;left:50%;transform-origin:-60px center;animation:orbit 9s linear infinite}
+@keyframes orbit{from{transform:rotate(0) translateX(70px) rotate(0)}to{transform:rotate(360deg) translateX(70px) rotate(-360deg)}}
+
+.letter-section{padding:28px 18px;font-family:'Great Vibes',cursive;font-size:1.2rem;text-align:center}
+
+/* ===== CAROUSEL (10 images auto-slide) ===== */
+/* Make all images equal sized & aligned */
+.carousel-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /* Responsive grid */
+  gap: 20px;
+  padding: 30px;
+  justify-items: center;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: 300px;                      /* Fixed equal height */
+  object-fit: cover;                  /* Auto-crops beautifully */
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.carousel-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255,255,255,0.4);
+}
+
+.carousel{padding:26px 12px;text-align:center}
+.carousel h2{margin-bottom:12px}
+.carousel-viewport{width:100%;overflow:hidden}
+.carousel-track{display:flex;gap:12px;align-items:center;will-change:transform;transform:translateX(0);padding:12px}
+.carousel-track img{width:220px;max-width:30%;border-radius:18px;border:2px solid rgba(255,255,255,0.04);box-shadow:0 12px 30px rgba(155,107,255,0.08);transition:transform .4s cubic-bezier(.2,.9,.2,1),box-shadow .4s}
+.carousel-track img:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 20px 50px rgba(155,107,255,0.18)}
+.carousel-controls{margin-top:12px;display:flex;gap:10px;justify-content:center}
+.carousel-controls .ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 12px;border-radius:10px;color:#fff;cursor:pointer}
+
+/* small screens for carousel */
+@media (max-width:900px){ .carousel-track img{width:180px;max-width:36%} }
+@media (max-width:600px){ .carousel-track img{width:150px;max-width:48%} .hero h1{font-size:2.2rem} }
+
+/* improve smoothness: hardware acceleration */
+.carousel-track{transform-origin:0 0}
+
+/* ----------- 3D PHOTO CUBE ----------- */
+.cube-section {
+    padding: 26px 16px;
+    text-align: center;
+}
+
+.cube-wrap {
+    perspective: 900px;
+    display: flex;
+    justify-content: center;
+}
+
+.cube {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spinCube 5s ease-in-out infinite;
+}
+
+/* Cube faces */
+.cube .face {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 111, 181, 0.2);
+    box-shadow: 0 8px 35px rgba(0,0,0,0.45);
+}
+
+.cube .face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- Correct Face Positions (Half size = 60px) ---- */
+.face1 { transform: rotateY(0deg) translateZ(60px); }
+.face2 { transform: rotateY(90deg) translateZ(60px); }
+.face3 { transform: rotateY(180deg) translateZ(60px); }
+.face4 { transform: rotateY(-90deg) translateZ(60px); }
+.face5 { transform: rotateX(90deg) translateZ(60px); }
+.face6 { transform: rotateX(-90deg) translateZ(60px); }
+
+/* ----------- Rotation Animation ----------- */
+@keyframes spinCube {
+    0%   { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+
+/* ===== SHAYARI, HUG & BUTTONS ===== */
+.shayari{padding:22px 18px;text-align:center}
+.hug-kiss-box{padding:22px;background:linear-gradient(180deg,rgba(255,182,193,0.03),rgba(255,182,193,0.01));border-radius:14px;margin:18px;box-shadow:0 8px 30px rgba(255,182,193,0.04);text-align:center}
+.hug-emoji{font-size:3.2rem}
+.hug-btn{margin-top:12px;padding:10px 18px;border-radius:12px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;cursor:pointer}
+.hidden-msg{display:none;margin-top:12px}
+
+/* heartbeat on hug button hover */
+.hug-btn:hover{transform:scale(1.03);transition:transform .2s}
+
+/* neon glow accents */
+.carousel-track img, .cube .face, .fade-container{box-shadow:0 8px 30px rgba(155,107,255,0.06),0 0 18px rgba(255,110,185,0.03)}
+
+/* music control */
+.music-control{position:fixed;left:14px;bottom:18px;z-index:5}
+.music-control button{background:rgba(0,0,0,0.36);border:1px solid rgba(255,255,255,0.06);color:#fff;padding:8px;border-radius:12px;cursor:pointer}
+
+/* accessibility: respects reduced-motion */
+@media (prefers-reduced-motion:reduce){
+.heartbeat-btn,.cube,.carousel-track,.fade-img{animation:none !important;transition:none !important}
+}
+
+/* final responsive tweaks */
+@media (max-width: 600px) {
+  .carousel-container img {
+    height: 220px;
+  }
+}
+
+
+/* meteor CSS (keeps original styling) */
+.meteor{position:fixed;width:2px;height:80px;background:linear-gradient(white,transparent);box-shadow:0 0 10px white;transform:rotate(45deg);filter:blur(1px);opacity:0;pointer-events:none;z-index:4;animation:meteorAnim 1.5s linear forwards}
+@keyframes meteorAnim{0%{opacity:1;transform:translate(0,0) rotate(45deg)}100%{opacity:0;transform:translate(700px,700px) rotate(45deg)}}
+/* ===== PYRAMID GALLERY STYLE (ADD AT BOTTOM) ===== */
+
+.pyramid-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.pyramid-gallery .row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.pyramid-gallery img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+    transition: 0.35s ease;
+}
+
+.pyramid-gallery img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 45px rgba(255, 111, 181, 0.45);
+}
+
+@media (max-width: 600px) {
+    .pyramid-gallery img {
+        width: 140px;
+        height: 190px;
+    }
+}
+.hero button {
+    background: linear-gradient(135deg, #ff95bd, #ff5f8a);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.hero button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #ff74ac, #ff3f76);
+}
+/* Start Button Styling (Put at the END of CSS) */
+.start-btn {
+    background: linear-gradient(135deg, #ff95bd, #ff5f8a);
+    color: white !important;
+    padding: 12px 26px;
+    border-radius: 12px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.start-btn:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #ff74ac, #ff3f76);
+}
+/* ❤️ Heartbeat Animated Start Button */
+.start-btn {
+    background: linear-gradient(135deg, #ff95bd, #ff5f8a);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 14px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 96, 140, 0.45);
+    animation: heartbeat 1.4s infinite ease-in-out;
+}
+
+.start-btn:hover {
+    transform: scale(1.12);
+    background: linear-gradient(135deg, #ff74ac, #ff3f76);
+}
+
+/* ❤️ Heartbeat Animation Keyframes */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.08); }
+    40% { transform: scale(0.96); }
+    60% { transform: scale(1.08); }
+    80% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+.falling-heart {
+  position: fixed;
+  top: -20px;
+  font-size: 28px;
+  animation: fallDown linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes fallDown {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* END OF STYLE.CSS */

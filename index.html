@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Princess 🎂💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- 🌟 Emoji Shooting Stars -->
+  <div class="emoji-shooting-star">🌟</div>
+  <div class="emoji-shooting-star" style="animation-delay: 3s;">✨</div>
+  <div class="emoji-shooting-star" style="animation-delay: 6s;">🌟</div>
+
+  <!-- 🌠 Glowing Meteor Shooting Stars -->
+  <div class="shooting-stars-wrapper">
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+  </div>
+
+  <!-- ✨ Star Background -->
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
+  <!-- 🌟 Falling Stars -->
+  <div class="emoji-stars">🌟✨🌟✨🌟</div>
+
+  <!-- 🌕 Moon -->
+  <img src="moon.png" alt="Moon" class="moon" />
+  <!-- 🎁 Hero Section -->
+  <section class="hero">
+    <h1>🎂 Happy Birthday My Princess Anwesha💖</h1>
+    <p>On this special day, I made something just for you…</p>
+    <button class="start-btn" onclick="startPage()">Unwrap the Surprise 🎁</button>
+
+  </section>
+
+  <!-- 🌌 Main Content -->
+  <main id="mainContent" class="hidden">
+
+    <!-- ✨ Birthday Message with Butterflies -->
+    <section class="sky-message">
+      <div class="orbit-wrapper">
+        <h2 class="sky-text center-name">
+          ✨ Happy Birthday <span class="orbit-centar">Anwesha</span> ✨
+        </h2>
+        <div class="orbit-butterfly orbit-b1">🦋❤️🦋</div>
+        <div class="orbit-butterfly orbit-b2">🦋❤️🦋</div>
+      </div>
+      <p class="subtext">From the bottom of my heart, just for you my love</p>
+    </section>
+
+    <!-- 💌 Letter -->
+    <section class="letter-section">
+      <h2>💌 A Letter From My Heart</h2>
+      <p id="typedText"></p>
+    </section>
+
+    <!-- 🖼 Memory Carousel -->
+    <section class="carousel">
+      <section id="gallery">
+    <h2 class="section-title">My sweet Princess</h2>
+
+    <!-- ⭐ PASTE PYRAMID HERE ⭐ -->
+
+    <div class="pyramid-gallery">
+
+        <div class="row r1">
+            <img src="yourphoto11.jpg">
+            <img src="yourphoto20.jpg">
+            <img src="yourphoto21.jpg">
+            <img src="yourphoto4.jpg">
+        </div>
+
+        <div class="row r2">
+            <img src="yourphoto15.jpg">
+            <img src="yourphoto23.jpg">
+            <img src="yourphoto17.jpg">
+        </div>
+
+        <div class="row r3">
+            <img src="yourphoto18.jpg">
+            <img src="yourphoto19.jpg">
+        </div>
+
+        <div class="row r4">
+            <img src="yourphoto16.jpg">
+        </div>
+
+    </div>
+<!-- 3D ROTATING CUBE -->
+<section class="cube-section">
+  <h2>🎁 A Little 3D Surprise</h2>
+  <div class="cube-wrap" aria-hidden="true">
+    <div class="cube" id="photoCube">
+      <figure class="face face1"><img src="cube1.png" alt="cube face 1"/></figure>
+      <figure class="face face2"><img src="cube2.jpg" alt="cube face 2"/></figure>
+      <figure class="face face3"><img src="cube3.png" alt="cube face 3"/></figure>
+      <figure class="face face4"><img src="cube4.jpg" alt="cube face 4"/></figure>
+      <figure class="face face5"><img src="cube5.jpg" alt="cube face 5"/></figure>
+      <figure class="face face6"><img src="cube6.png" alt="cube face 6"/></figure>
+    </div>
+  </div>
+</section>
+    <!-- 🌹 Shayari -->
+    <section class="shayari">
+      <h2>🌹 For You, My Poetry</h2>
+      <p>
+        Tere akhono mein duba mera aj,<br />
+        Tere sapno main duba mera kal.<br />
+        Tere honese se jo hu main aj,<br />
+        Tere na honese rahunga na main kal. 💖
+      </p>
+    </section>
+
+    <!-- ❤ Heart Slider -->
+    <section class="heart-slider">
+      <h2>❤ Slide to Feel My Love</h2>
+      <input type="range" min="0" max="100" value="0" id="loveSlider" />
+      <p id="loveMsg"></p>
+    </section>
+
+    <!-- 🤗 Hug Section -->
+    <section class="hug-kiss-box">
+      <h2>🤗 A Warm Hug Just for You</h2>
+      <div class="hug-emoji">🫂💖</div>
+      <div class="press-text">Press me to get some 👇</div>
+      <button class="hug-btn" onclick="sendLove()">Warm Hugs & Kisses 💌</button>
+      <p id="loveResponse" class="hidden-msg">💖 Hugs & kisses Delivered... Can you feel it? 💋</p>
+    </section>
+
+    <!-- 🌠 Final Message -->
+    <section class="final-msg">
+      <h2>🌠 My Final Wish</h2>
+      <p>
+        “Happy Birthday again, My Princess.” 🌙✨.<br />
+        You are the quiet miracle that changed the rhythm of my days.
+The stars, the moon, the endless sky—
+nothing shines the way you do in my heart.
+I love you more than words can gather,
+more than the sky can hold stars,
+more than the ocean can cradle waves.
+
+After three years and six months,
+when I thought my heart had forgotten how to feel emotions & love anymore,
+you arrived at that time—
+softly, unexpectedly—
+like a prayer answered before it was spoken.
+God stitched your name into the empty places of my life
+and suddenly everything felt warm again.
+
+You are the blessing I never knew I needed,
+and now…
+I cannot imagine a world where you don’t exist.
+From the deepest corners of my heart,
+I wish every dream of yours blooms into reality.
+
+Tor jibon’er protiti iccha puro hok.
+Tui sobsomoy khub khub khushi thakish.
+
+Ami tor upor eto bhalobasha chhoriye debo—
+jerom  kono kobi tar kobitar upor, kono ma tar shontaner upor, kono mathor tar shabol er upor, Bhogoban tar bhokto’r upor.
+I promise you a love
+so gentle it melts your fears,
+so steady it never lets you fall,
+so deep that even eternity will remember it.
+
+You are my everything—
+my today,
+my tomorrow,
+my forever that stretches beyond time.
+
+Again… Happy Birthday, my love.
+Tonight, I feel like the luckiest soul in the universe,
+because your hand, your heart, your world—
+they all rest beside mine.
+And I will spend my life cherishing that gift.
+
+💖🌙✨
+      </p>
+    </section>
+  </main>
+  <!-- 🎵 Background Music -->
+<audio id="bgMusic" loop>
+  <source src="your-music.mp3" type="audio/mpeg" />
+</audio>
+
+  <!-- 📜 JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
