@@ -495,18 +495,8 @@ html, body {
     overflow-y: auto;
 }
 
-.shooting-star, 
-.shoot, 
-.shooting {
-    bottom: 0 !important;   /* Prevents extra page height */
-}
-* {
-    margin-bottom: 0 !important;
-}
-body {
-    height: auto !important;
-    min-height: 100vh;
-}
+
 /* END OF STYLE.CSS */
+
 
 
