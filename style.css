@@ -343,7 +343,6 @@ background:transparent url('[https://raw.githubusercontent.com/VincentGarreau/pa
     box-shadow: 0 10px 25px rgba(255, 96, 140, 0.45);
     animation: heartbeat 1.4s infinite ease-in-out;
 }
-
 .start-btn:hover {
     transform: scale(1.12);
     background: linear-gradient(135deg, #ff74ac, #ff3f76);
@@ -371,5 +370,102 @@ background:transparent url('[https://raw.githubusercontent.com/VincentGarreau/pa
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(110vh); opacity: 0; }
 }
+
 /* END OF STYLE.CSS */
+/* ==================== MOBILE RESPONSIVE FIXES ==================== */
+@media (max-width: 900px) {
+    /* Hero Section */
+    .hero h1 { font-size: 2.4rem; }
+    .hero .subtitle { font-size: 1rem; }
+    .hero button { padding: 10px 20px; font-size: 15px; }
+
+    /* Carousel adjustments */
+    .carousel-track img { width: 180px; max-width: 36%; height: auto; }
+    .carousel-container img { height: 220px; }
+
+    /* Cube */
+    .cube { width: 90px; height: 90px; }
+    .cube .face { width: 90px; height: 90px; }
+    .face1, .face2, .face3, .face4, .face5, .face6 { transform: translateZ(45px); }
+
+    /* Pyramid Gallery */
+    .pyramid-gallery img { width: 160px; height: 210px; }
+
+    /* Floating Hearts & Emoji Stars */
+    .floating-heart, .emoji-stars { font-size: 18px; }
+
+    /* Orbiting butterflies */
+    .orbit-butterfly { font-size: 16px; }
+
+    /* Shayari & Letter Section */
+    .letter-section, .shayari { font-size: 1rem; padding: 16px; }
+
+    /* Hug Button */
+    .hug-btn { padding: 8px 16px; font-size: 14px; }
+
+    /* Start Button */
+    .start-btn { padding: 10px 22px; font-size: 18px; }
+}
+
+@media (max-width: 600px) {
+    /* Hero Section */
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 0.95rem; }
+    .hero button { padding: 8px 18px; font-size: 14px; }
+.carousel-container img { height: 200px; }
+    .carousel-track img { width: 150px; max-width: 48%; }
+
+    .pyramid-gallery img { width: 140px; height: 190px; }
+    /* Carousel */
+    .carousel-track img { width: 150px; max-width: 48%; height: auto; }
+    .carousel-container img { height: 180px; }
+
+    /* Cube */
+    .cube { width: 70px; height: 70px; }
+    .cube .face { width: 70px; height: 70px; }
+    .face1, .face2, .face3, .face4, .face5, .face6 { transform: translateZ(35px); }
+
+    /* Pyramid Gallery */
+    .pyramid-gallery img { width: 120px; height: 160px; }
+
+    /* Floating Hearts & Emoji Stars */
+    .floating-heart, .emoji-stars { font-size: 14px; }
+
+    /* Orbiting butterflies */
+    .orbit-butterfly { font-size: 14px; }
+
+    /* Shayari & Letter Section */
+    .letter-section, .shayari { font-size: 0.95rem; padding: 12px; }
+
+    /* Hug Button */
+    .hug-btn { padding: 6px 12px; font-size: 13px; }
+
+    /* Start Button */
+    .start-btn { padding: 8px 20px; font-size: 16px; }
+}
+
+/* Prevent horizontal scroll */
+body, html { overflow-x: hidden; }
+img, video, canvas { max-width: 100%; height: auto; }
+
+/* Ensure pyramid rows wrap on small screens */
+.pyramid-gallery .row { flex-wrap: wrap; justify-content: center; gap: 16px; }
+/* END OF MOBILE RESPONSIVE FIXES */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.shooting-star, 
+.shoot, 
+.shooting {
+    bottom: 0 !important;   /* Prevents extra page height */
+}
+* {
+    margin-bottom: 0 !important;
+}
+body {
+    height: auto !important;
+    min-height: 100vh;
+}
 
