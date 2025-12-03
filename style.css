@@ -483,20 +483,34 @@ img, video, canvas {
     .cube {
         width: 80px;
         height: 80px;
-    }
+    
     .cube .face {
         width: 80px;
         height: 80px;
         transform: translateZ(40px);
     }
-}
+
 html, body {
     overflow-x: hidden;
     overflow-y: auto;
 }
 
+.shooting-star, 
+.shoot, 
+.shooting {
+    bottom: 0 !important;   /* Prevents extra page height */
+}
+* {
+    margin-bottom: 0 !important;
+}
+body {
+    height: auto !important;
+    min-height: 100vh;
+}
+
 
 /* END OF STYLE.CSS */
+
 
 
 
